@@ -92,6 +92,7 @@ def format_for_telegram(answer: str) -> str:
         parts.append(html.escape(tail))
 
     body = "".join(parts)
+    body = body.replace("###", "").replace("**", "")
     return f"<b>Ответ:</b>\n\n{body}"
 
 
